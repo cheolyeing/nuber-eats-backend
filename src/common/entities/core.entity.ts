@@ -1,5 +1,5 @@
-import { Field } from '@nestjs/graphql';
-import { CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import { Field } from "@nestjs/graphql";
+import { CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity()
 export class CoreEntity {
