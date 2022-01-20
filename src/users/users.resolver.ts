@@ -26,5 +26,15 @@ export class UsersResolver {
   }
 
   @Mutation(() => LoginOutput)
-  async login(@Args("input") loginInput: LoginInput) {}
+  async login(@Args("input") loginInput: LoginInput): Promise<LoginOutput> {
+    try {
+      const { ok, error, token } = await this.usersService.login(loginInput);
+      return { ok, error, token };
+    } catch (error) {
+      return {
+        ok: false,
+        error,
+      };
+    }
+  }
 }
